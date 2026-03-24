@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>User Profile – Deep Search</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a href="#" class="logo">🔍 Deep Search</a>
+      <nav class="nav">
+        <a href="#">Home</a>
+        <a href="#">Explore</a>
+        <a href="#" class="active">Profile</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container profile-layout">
+    <!-- Sidebar -->
+    <aside class="profile-sidebar">
+      <div class="avatar-wrapper">
+        <img
+          class="avatar"
+          src="https://ui-avatars.com/api/?name=Arash+D&background=4f46e5&color=fff&size=128"
+          alt="User avatar"
+        />
+        <button class="btn btn-sm" id="editAvatarBtn">Change Photo</button>
+      </div>
+      <h1 class="profile-name">Arash Dehghan</h1>
+      <p class="profile-username">@arash_d</p>
+      <p class="profile-bio">Passionate researcher and deep-search enthusiast. Always looking for better ways to discover knowledge.</p>
+
+      <div class="stat-grid">
+        <div class="stat">
+          <span class="stat-value">1,248</span>
+          <span class="stat-label">Searches</span>
+        </div>
+        <div class="stat">
+          <span class="stat-value">384</span>
+          <span class="stat-label">Saved</span>
+        </div>
+        <div class="stat">
+          <span class="stat-value">57</span>
+          <span class="stat-label">Collections</span>
+        </div>
+      </div>
+
+      <button class="btn btn-primary" id="editProfileBtn">Edit Profile</button>
+    </aside>
+
+    <!-- Main content -->
+    <section class="profile-main">
+      <!-- Tabs -->
+      <div class="tabs" role="tablist">
+        <button class="tab active" role="tab" data-tab="history">Search History</button>
+        <button class="tab" role="tab" data-tab="saved">Saved Results</button>
+        <button class="tab" role="tab" data-tab="settings">Settings</button>
+      </div>
+
+      <!-- Search History tab -->
+      <div class="tab-panel active" id="history">
+        <div class="search-bar">
+          <input type="text" placeholder="Filter your search history…" id="historyFilter" />
+        </div>
+        <ul class="history-list" id="historyList">
+          <li class="history-item">
+            <span class="history-icon">🔍</span>
+            <div class="history-detail">
+              <p class="history-query">quantum computing breakthroughs 2025</p>
+              <p class="history-meta">March 24, 2026 · 12 results</p>
+            </div>
+            <button class="btn btn-sm btn-ghost" title="Remove">✕</button>
+          </li>
+          <li class="history-item">
+            <span class="history-icon">🔍</span>
+            <div class="history-detail">
+              <p class="history-query">machine learning interpretability techniques</p>
+              <p class="history-meta">March 22, 2026 · 34 results</p>
+            </div>
+            <button class="btn btn-sm btn-ghost" title="Remove">✕</button>
+          </li>
+          <li class="history-item">
+            <span class="history-icon">🔍</span>
+            <div class="history-detail">
+              <p class="history-query">open-source large language models comparison</p>
+              <p class="history-meta">March 20, 2026 · 21 results</p>
+            </div>
+            <button class="btn btn-sm btn-ghost" title="Remove">✕</button>
+          </li>
+          <li class="history-item">
+            <span class="history-icon">🔍</span>
+            <div class="history-detail">
+              <p class="history-query">protein folding AlphaFold applications</p>
+              <p class="history-meta">March 18, 2026 · 9 results</p>
+            </div>
+            <button class="btn btn-sm btn-ghost" title="Remove">✕</button>
+          </li>
+          <li class="history-item">
+            <span class="history-icon">🔍</span>
+            <div class="history-detail">
+              <p class="history-query">renewable energy storage solutions</p>
+              <p class="history-meta">March 15, 2026 · 18 results</p>
+            </div>
+            <button class="btn btn-sm btn-ghost" title="Remove">✕</button>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Saved Results tab -->
+      <div class="tab-panel" id="saved">
+        <div class="saved-grid">
+          <div class="saved-card">
+            <div class="saved-card-header">📄</div>
+            <h3>Quantum Computing Overview</h3>
+            <p>A comprehensive guide to the state of quantum computing in 2025.</p>
+            <div class="saved-card-footer">
+              <span class="tag">Science</span>
+              <span class="tag">Tech</span>
+            </div>
+          </div>
+          <div class="saved-card">
+            <div class="saved-card-header">📰</div>
+            <h3>LLM Benchmark Report</h3>
+            <p>Comparing performance of the top 10 open-source language models.</p>
+            <div class="saved-card-footer">
+              <span class="tag">AI</span>
+              <span class="tag">Research</span>
+            </div>
+          </div>
+          <div class="saved-card">
+            <div class="saved-card-header">🔬</div>
+            <h3>AlphaFold in Drug Discovery</h3>
+            <p>How protein structure prediction is accelerating pharmaceutical research.</p>
+            <div class="saved-card-footer">
+              <span class="tag">Biology</span>
+              <span class="tag">Medicine</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Settings tab -->
+      <div class="tab-panel" id="settings">
+        <form class="settings-form" id="settingsForm">
+          <h2>Account Information</h2>
+          <div class="form-group">
+            <label for="fullName">Full Name</label>
+            <input type="text" id="fullName" value="Arash Dehghan" />
+          </div>
+          <div class="form-group">
+            <label for="username">Username</label>
+            <input type="text" id="username" value="arash_d" />
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" value="arash@example.com" />
+          </div>
+          <div class="form-group">
+            <label for="bio">Bio</label>
+            <textarea id="bio" rows="3">Passionate researcher and deep-search enthusiast. Always looking for better ways to discover knowledge.</textarea>
+          </div>
+
+          <h2>Preferences</h2>
+          <div class="form-group toggle-group">
+            <label for="darkMode">Dark Mode</label>
+            <label class="toggle">
+              <input type="checkbox" id="darkMode" />
+              <span class="slider"></span>
+            </label>
+          </div>
+          <div class="form-group toggle-group">
+            <label for="emailNotifs">Email Notifications</label>
+            <label class="toggle">
+              <input type="checkbox" id="emailNotifs" checked />
+              <span class="slider"></span>
+            </label>
+          </div>
+          <div class="form-group toggle-group">
+            <label for="saveHistory">Save Search History</label>
+            <label class="toggle">
+              <input type="checkbox" id="saveHistory" checked />
+              <span class="slider"></span>
+            </label>
+          </div>
+
+          <div class="form-actions">
+            <button type="submit" class="btn btn-primary">Save Changes</button>
+            <button type="reset" class="btn">Cancel</button>
+          </div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- Edit Profile Modal -->
+  <div class="modal-overlay" id="editModal" aria-hidden="true">
+    <div class="modal" role="dialog" aria-labelledby="modalTitle">
+      <h2 id="modalTitle">Edit Profile</h2>
+      <div class="form-group">
+        <label for="modalName">Display Name</label>
+        <input type="text" id="modalName" value="Arash Dehghan" />
+      </div>
+      <div class="form-group">
+        <label for="modalBio">Bio</label>
+        <textarea id="modalBio" rows="3">Passionate researcher and deep-search enthusiast. Always looking for better ways to discover knowledge.</textarea>
+      </div>
+      <div class="modal-actions">
+        <button class="btn btn-primary" id="saveModalBtn">Save</button>
+        <button class="btn" id="closeModalBtn">Cancel</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
